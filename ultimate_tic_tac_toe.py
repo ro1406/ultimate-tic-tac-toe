@@ -566,24 +566,24 @@ def main():
     # Get difficulty level
     while True:
         try:
-            depth = int(input("Enter AI depth (1-6, higher = stronger): "))
-            if 1 <= depth <= 6:
+            depth = int(input("Enter AI depth (1-10, higher = stronger): "))
+            if 1 <= depth <= 10:
                 break
             else:
-                print("Depth must be between 1 and 6")
+                print("Depth must be between 1 and 10")
         except ValueError:
             print("Please enter a valid number")
 
     print(f"AI depth set to {depth}")
-    print("Note: For perfect play, use depth 6 or higher")
+    print("Note: For perfect play, use depth 10 or higher")
 
     # Get visualization preference
     while True:
-        viz_choice = input("Choose visualization type (1=Graphical, 2=Console, 3=Both): ").strip()
-        if viz_choice in ["1", "2", "3"]:
+        viz_choice = input("Choose visualization type (0=Off, 1=Graphical, 2=Console, 3=Both): ").strip()
+        if viz_choice in ["1", "2", "3", "0"]:
             break
         else:
-            print("Please enter 1, 2, or 3")
+            print("Please enter 0, 1, 2, or 3")
 
     game = UltimateTicTacToe()
 
